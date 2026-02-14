@@ -8951,20 +8951,8 @@ Column pairs with correlated missing patterns (r &gt; 0.5): 957
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Dropping 6 columns with &gt;20% missing data:
 ['TITEL_KZ', 'AGER_TYP', 'KK_KUNDENTYP', 'KBA05_BAUMAX', 'GEBURTSJAHR', 'ALTER_HH']
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Remaining shape: (891221, 79)</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
+
+Remaining shape: (891221, 79)
 </pre>
 </div>
 </div>
@@ -9345,13 +9333,7 @@ numeric (6): ['ANZ_PERSONEN', 'ANZ_TITEL', 'ANZ_HAUSHALTE_AKTIV', 'ANZ_HH_TITEL'
   ZABEOTYP: MULTI-LEVEL (6 levels) - values: [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6)]...
   GEBAEUDETYP: MULTI-LEVEL (7 levels) - values: [np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(4.0), np.float64(5.0), np.float64(6.0), np.float64(8.0)]...
   OST_WEST_KZ: BINARY NON-NUMERIC - values: ['W' 'O']
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>  CAMEO_DEUG_2015: MULTI-LEVEL (9 levels) - values: ['1', '2', '3', '4', '5', '6', '7', '8', '9']...
+  CAMEO_DEUG_2015: MULTI-LEVEL (9 levels) - values: ['1', '2', '3', '4', '5', '6', '7', '8', '9']...
   CAMEO_DEU_2015: MULTI-LEVEL (44 levels) - values: ['1A', '1B', '1C', '1D', '1E', '2A', '2B', '2C', '2D', '3A']...
 
 Binary (numeric, keep as-is): ['ANREDE_KZ', 'GREEN_AVANTGARDE', 'SOHO_KZ', 'VERS_TYP']
@@ -9838,13 +9820,7 @@ Missing values remaining: 529094
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Missing values per column:
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>W_KEIT_KIND_HH                    56282
+W_KEIT_KIND_HH                    56282
 KKK                               54778
 REGIOTYP                          54778
 VERS_TYP                          34524
@@ -9880,13 +9856,7 @@ BALLRAUM                            543
 KONSUMNAEHE                          51
 GEBAEUDETYP_RASTER                    5
 dtype: int64
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
+
 Total remaining NaN values: 529094
 </pre>
 </div>
@@ -10386,10 +10356,9 @@ ANREDE_KZ                       0.367914
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Discussion-2.3:-Interpret-Principal-Components">Discussion 2.3: Interpret Principal Components<a class="anchor-link" href="#Discussion-2.3:-Interpret-Principal-Components">¶</a></h3><p><strong>PC1</strong> appears to capture a dimension related to <strong>wealth/affluence and financial engagement</strong>. Features with high positive weights tend to relate to financial interest and investment orientation (e.g., FINANZ_ANLEGER, FINANZ_VORSORGER, HH_EINKOMMEN_SCORE), while negative weights correspond to features like FINANZ_MINIMALIST (low financial interest). People scoring high on PC1 tend to be financially active and wealthier, while those scoring low tend to be financially minimalist.</p>
-<p><strong>PC2</strong> appears to capture a dimension related to <strong>personality and lifestyle orientation</strong>. The SEMIO (personality typology) features dominate this component. Features like SEMIO_REL (religious), SEMIO_FAM (family-minded), and SEMIO_TRADV (traditional-minded) load in one direction, while SEMIO_KAEM (combative), SEMIO_DOM (dominant), and SEMIO_KRIT (critical-minded) load in the opposite direction. This component separates traditional, family-oriented individuals from more assertive, independent-minded individuals.</p>
-<p><strong>PC3</strong> captures a dimension related to <strong>age/generation and cultural movement</strong>. Features like PRAEGENDE_JUGENDJAHRE_DECADE (decade of youth) and ALTERSKATEGORIE_GROB (age category) have strong weights, along with SEMIO features related to event-orientation and sensuality vs. duty and tradition. This component separates younger, more experience-oriented individuals from older, more traditional ones.</p>
-<p>These interpretations are meaningful and align well with known demographic segmentation dimensions: economic status, personality/values, and generational differences.</p>
+<h3 id="Discussion-2.3:-Interpret-Principal-Components">Discussion 2.3: Interpret Principal Components<a class="anchor-link" href="#Discussion-2.3:-Interpret-Principal-Components">¶</a></h3><p><strong>PC1 (16.8% variance) - Urban Density vs. Rural Affluence:</strong> The strongest negative weights belong to PLZ8_ANTG3/ANTG4 (multi-family housing share), CAMEO_INTL_2015_WEALTH, HH_EINKOMMEN_SCORE (household income), ORTSGR_KLS9 (community size), and EWDICHTE (household density). The strongest positive weights are MOBI_REGIO (low mobility/rural), PLZ8_ANTG1/KBA05_ANTG1 (single-family housing), FINANZ_MINIMALIST (low financial interest), and KONSUMNAEHE (distance to point of sale). A negative PC1 score indicates an urban, higher-income individual in a dense, multi-family neighborhood. A positive PC1 score indicates a rural, financially minimalist individual in a single-family home area.</p>
+<p><strong>PC2 (13.4% variance) - Older/Traditional vs. Younger/Experience-Oriented:</strong> Negative weights are dominated by SEMIO_REL (religious), PRAEGENDE_JUGENDJAHRE_DECADE (older generation), FINANZ_SPARER (money-saver), SEMIO_TRADV (traditional), SEMIO_PFLICHT (dutiful), and FINANZ_UNAUFFAELLIGER (inconspicuous). Positive weights include ALTERSKATEGORIE_GROB (younger age), SEMIO_ERL (event-oriented), FINANZ_VORSORGER (be-prepared), SEMIO_LUST (sensual-minded), and SEMIO_KAEM (combative). This component separates older, traditional, savings-oriented individuals (negative) from younger, experience-seeking, more assertive individuals (positive).</p>
+<p><strong>PC3 (9.5% variance) - Gender/Personality Axis:</strong> The strongest positive weight is ANREDE_KZ (gender: male), along with SEMIO_KAEM (combative), SEMIO_DOM (dominant), SEMIO_KRIT (critical), and SEMIO_RAT (rational). The negative end is characterized by SEMIO_VERT (dreamful), SEMIO_SOZ (socially-minded), SEMIO_FAM (family-minded), and SEMIO_KULT (cultural-minded). This component appears to capture a gender-correlated personality dimension, separating assertive, rational, dominant traits (positive/male-leaning) from nurturing, social, cultural traits (negative/female-leaning).</p>
 </div>
 </div>
 </div>
@@ -10553,18 +10522,18 @@ Fitting KMeans with k=10... </pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
+<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
   ret = a @ b
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
 </pre>
 </div>
 </div>
@@ -10603,18 +10572,18 @@ Fitting KMeans with k=14... </pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
+<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
   ret = a @ b
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
 </pre>
 </div>
 </div>
@@ -10628,18 +10597,18 @@ Fitting KMeans with k=16... </pre>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
+<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
   ret = a @ b
 /opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
   ret = a @ b
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
+/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
+  current_pot = closest_dist_sq @ sample_weight
 </pre>
 </div>
 </div>
@@ -11804,6 +11773,8 @@ Underrepresented clusters (customer proportion significantly lower):
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># What kinds of people are part of a cluster that is overrepresented in the</span>
 <span class="c1"># customer data compared to the general population?</span>
 
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+
 <span class="c1"># Get the most overrepresented cluster</span>
 <span class="n">overrep_cluster</span> <span class="o">=</span> <span class="n">comparison</span><span class="p">[</span><span class="s1">'Difference'</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Most overrepresented cluster: </span><span class="si">{</span><span class="n">overrep_cluster</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -11813,8 +11784,10 @@ Underrepresented clusters (customer proportion significantly lower):
 
 <span class="c1"># Inverse transform the cluster centroid to interpret it</span>
 <span class="n">centroid_pca</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">overrep_cluster</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">centroid_scaled</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_pca</span><span class="p">)</span>
-<span class="n">centroid_original</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_scaled</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+    <span class="n">centroid_scaled</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_pca</span><span class="p">)</span>
+    <span class="n">centroid_original</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_scaled</span><span class="p">)</span>
 <span class="n">centroid_series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">centroid_original</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
 
 <span class="c1"># Show the most distinctive features (furthest from the overall mean)</span>
@@ -11826,7 +11799,7 @@ Underrepresented clusters (customer proportion significantly lower):
 
 <span class="c1"># Also look at PCA space</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Cluster </span><span class="si">{</span><span class="n">overrep_cluster</span><span class="si">}</span><span class="s2"> in PCA Space ---"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Top PC values:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Top PC values (by magnitude):"</span><span class="p">)</span>
 <span class="n">pc_values</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">overrep_cluster</span><span class="p">],</span> 
                        <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'PC</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">overrep_cluster</span><span class="p">]))])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pc_values</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
@@ -11873,24 +11846,12 @@ ANREDE_KZ                         1.044953
 KBA05_ANTG3                       1.144390
 
 --- Cluster 0 in PCA Space ---
-Top PC values:
+Top PC values (by magnitude):
 PC3    -2.861163
 PC2     1.999089
 PC1    -1.975477
 PC4    -0.422684
 PC11    0.332510
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: divide by zero encountered in matmul
-  return X @ self.components_ + self.mean_
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: overflow encountered in matmul
-  return X @ self.components_ + self.mean_
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: invalid value encountered in matmul
-  return X @ self.components_ + self.mean_
 </pre>
 </div>
 </div>
@@ -11916,8 +11877,10 @@ PC11    0.332510
 
 <span class="c1"># Inverse transform the cluster centroid</span>
 <span class="n">centroid_pca_under</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">underrep_cluster</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">centroid_scaled_under</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_pca_under</span><span class="p">)</span>
-<span class="n">centroid_original_under</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_scaled_under</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)</span>
+    <span class="n">centroid_scaled_under</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_pca_under</span><span class="p">)</span>
+    <span class="n">centroid_original_under</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">centroid_scaled_under</span><span class="p">)</span>
 <span class="n">centroid_series_under</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">centroid_original_under</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"--- Cluster </span><span class="si">{</span><span class="n">underrep_cluster</span><span class="si">}</span><span class="s2"> Centroid (Original Feature Space) ---"</span><span class="p">)</span>
@@ -11928,7 +11891,7 @@ PC11    0.332510
 
 <span class="c1"># PCA space</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Cluster </span><span class="si">{</span><span class="n">underrep_cluster</span><span class="si">}</span><span class="s2"> in PCA Space ---"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Top PC values:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Top PC values (by magnitude):"</span><span class="p">)</span>
 <span class="n">pc_values_under</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">underrep_cluster</span><span class="p">],</span> 
                              <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'PC</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">underrep_cluster</span><span class="p">]))])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">pc_values_under</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
@@ -11975,24 +11938,12 @@ OST_WEST_KZ                       0.834228
 PLZ8_ANTG3                        0.940965
 
 --- Cluster 1 in PCA Space ---
-Top PC values:
+Top PC values (by magnitude):
 PC1    3.476436
 PC3    1.850718
 PC2    1.587554
 PC4    0.266569
 PC5   -0.216039
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: divide by zero encountered in matmul
-  return X @ self.components_ + self.mean_
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: overflow encountered in matmul
-  return X @ self.components_ + self.mean_
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:205: RuntimeWarning: invalid value encountered in matmul
-  return X @ self.components_ + self.mean_
 </pre>
 </div>
 </div>
@@ -12005,11 +11956,12 @@ PC5   -0.216039
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">Discussion 3.3: Compare Customer Data to Demographics Data<a class="anchor-link" href="#Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">¶</a></h3><p>The comparison between general population and customer cluster distributions reveals clear patterns in who the mail-order company's target audience is:</p>
-<p><strong>Overrepresented clusters (target customers):</strong> The clusters that are overrepresented in the customer data tend to be characterized by higher financial engagement, higher household income scores, and more traditional/family-oriented personality profiles. These individuals tend to be older, living in established neighborhoods with good purchasing power, and show characteristics of being financially savvy investors or home-owners. They are likely established, middle-to-upper class individuals who respond well to mail-order marketing.</p>
-<p><strong>Underrepresented clusters (non-target demographics):</strong> The clusters that are underrepresented in the customer data tend to show characteristics of younger, more urban populations with lower financial engagement. These individuals tend to have lower income scores, are more likely to live in dense urban areas, and show personality profiles that lean toward being more independent and less traditional. They may prefer digital channels over mail-order purchasing.</p>
-<p><strong>Key insight:</strong> The mail-order company's customer base is not a random sample of the German population. Instead, it is heavily skewed toward certain demographic segments. Marketing campaigns should be targeted at the overrepresented segments to maximize return on investment, while the underrepresented segments may require different marketing approaches (e.g., digital advertising) if the company wishes to expand into those demographics.</p>
-<p>These findings align with expectations for a traditional mail-order company: their customers tend to be older, wealthier, more traditional individuals who are comfortable with catalog-based purchasing and have the disposable income for mail-order products.</p>
+<h3 id="Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">Discussion 3.3: Compare Customer Data to Demographics Data<a class="anchor-link" href="#Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">¶</a></h3><p>The comparison between general population and customer cluster distributions reveals stark differences, confirming that the company's customers are concentrated in specific demographic segments.</p>
+<p><strong>Overrepresented clusters (target customers):</strong></p>
+<p>Cluster 0 is the most dramatically overrepresented: it contains 46.1% of customers but only 12.1% of the general population (3.8x ratio). Clusters 4 and 5 are also overrepresented. Looking at Cluster 0's centroid in PCA space, it scores strongly negative on PC3 (dreamful, socially-minded, family-minded, culturally-oriented personality traits) and negative on PC1 (urban, higher-income, denser neighborhoods). In the original feature space, this cluster shows higher HH_EINKOMMEN_SCORE (household income), higher SEMIO_VERT (dreamful) and SEMIO_FAM (family-minded) personality scores, and lower GREEN_AVANTGARDE and PRAEGENDE_JUGENDJAHRE_MOVEMENT (mainstream rather than avantgarde). These are likely <strong>established, urban, family-oriented individuals with higher incomes</strong> who favor traditional purchasing channels like mail-order.</p>
+<p><strong>Underrepresented clusters (non-target demographics):</strong></p>
+<p>Cluster 1 is the most underrepresented: it contains 16.1% of the general population but only 2.0% of customers (0.12x ratio). Clusters 3, 6, and 7 are also strongly underrepresented. Cluster 1 scores very high on PC1 (rural, single-family housing, financially minimalist) and positive on PC3 (male, combative, dominant, rational personality). In the original feature space, this cluster shows high SEMIO_ERL (event-oriented), SEMIO_DOM (dominant), SEMIO_KAEM (combative), and SEMIO_KRIT (critical-minded) scores, with very low multi-family housing indicators. These are likely <strong>rural, male, independently-minded individuals</strong> with assertive personalities who are not drawn to mail-order purchasing.</p>
+<p><strong>Key Takeaway:</strong> The mail-order company's customer base is heavily concentrated in urban, family-oriented, higher-income segments with mainstream cultural leanings. Rural, independently-minded populations are significantly underrepresented. Marketing campaigns should focus on the overrepresented segments for highest ROI.</p>
 </div>
 </div>
 </div>
