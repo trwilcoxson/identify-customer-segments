@@ -7822,11 +7822,15 @@ a.anchor-link {
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
+
+<span class="c1"># Suppress sklearn RuntimeWarnings from matrix operations</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
 
 <span class="c1"># magic word for producing visualizations in notebook</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -8951,8 +8955,20 @@ Column pairs with correlated missing patterns (r &gt; 0.5): 957
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Dropping 6 columns with &gt;20% missing data:
 ['TITEL_KZ', 'AGER_TYP', 'KK_KUNDENTYP', 'KBA05_BAUMAX', 'GEBURTSJAHR', 'ALTER_HH']
-
-Remaining shape: (891221, 79)
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Remaining shape: (891221, 79)</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
 </pre>
 </div>
 </div>
@@ -9332,8 +9348,20 @@ numeric (6): ['ANZ_PERSONEN', 'ANZ_TITEL', 'ANZ_HAUSHALTE_AKTIV', 'ANZ_HH_TITEL'
   VERS_TYP: binary - values: [2. 1.]
   ZABEOTYP: MULTI-LEVEL (6 levels) - values: [np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5), np.int64(6)]...
   GEBAEUDETYP: MULTI-LEVEL (7 levels) - values: [np.float64(1.0), np.float64(2.0), np.float64(3.0), np.float64(4.0), np.float64(5.0), np.float64(6.0), np.float64(8.0)]...
-  OST_WEST_KZ: BINARY NON-NUMERIC - values: ['W' 'O']
-  CAMEO_DEUG_2015: MULTI-LEVEL (9 levels) - values: ['1', '2', '3', '4', '5', '6', '7', '8', '9']...
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>  OST_WEST_KZ: BINARY NON-NUMERIC - values: ['W' 'O']
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>  CAMEO_DEUG_2015: MULTI-LEVEL (9 levels) - values: ['1', '2', '3', '4', '5', '6', '7', '8', '9']...
   CAMEO_DEU_2015: MULTI-LEVEL (44 levels) - values: ['1A', '1B', '1C', '1D', '1E', '2A', '2B', '2C', '2D', '3A']...
 
 Binary (numeric, keep as-is): ['ANREDE_KZ', 'GREEN_AVANTGARDE', 'SOHO_KZ', 'VERS_TYP']
@@ -9607,13 +9635,7 @@ Name: count, dtype: int64
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Dropping mixed-type original columns: ['LP_LEBENSPHASE_FEIN', 'LP_LEBENSPHASE_GROB', 'PRAEGENDE_JUGENDJAHRE', 'WOHNLAGE', 'CAMEO_INTL_2015', 'PLZ8_BAUMAX']
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Shape after dropping mixed columns: (780153, 64)
+Shape after dropping mixed columns: (780153, 64)
 </pre>
 </div>
 </div>
@@ -9822,13 +9844,7 @@ Missing values remaining: 529094
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Missing values per column:
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>W_KEIT_KIND_HH                    56282
+W_KEIT_KIND_HH                    56282
 KKK                               54778
 REGIOTYP                          54778
 VERS_TYP                          34524
@@ -9978,18 +9994,6 @@ Total variance explained: 1.0000
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: divide by zero encountered in matmul
-  C = X.T @ X
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: overflow encountered in matmul
-  C = X.T @ X
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: invalid value encountered in matmul
-  C = X.T @ X
-</pre>
-</div>
-</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
@@ -10090,30 +10094,6 @@ Total variance explained: 1.0000
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Selected 27 components (capturing 85.8% of variance)
 PCA-transformed data shape: (780153, 27)
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: divide by zero encountered in matmul
-  C = X.T @ X
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: overflow encountered in matmul
-  C = X.T @ X
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_pca.py:604: RuntimeWarning: invalid value encountered in matmul
-  C = X.T @ X
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:152: RuntimeWarning: divide by zero encountered in matmul
-  X_transformed = X @ self.components_.T
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:152: RuntimeWarning: overflow encountered in matmul
-  X_transformed = X @ self.components_.T
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:152: RuntimeWarning: invalid value encountered in matmul
-  X_transformed = X @ self.components_.T
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:159: RuntimeWarning: divide by zero encountered in matmul
-  X_transformed -= xp.reshape(self.mean_, (1, -1)) @ self.components_.T
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:159: RuntimeWarning: overflow encountered in matmul
-  X_transformed -= xp.reshape(self.mean_, (1, -1)) @ self.components_.T
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/decomposition/_base.py:159: RuntimeWarning: invalid value encountered in matmul
-  X_transformed -= xp.reshape(self.mean_, (1, -1)) @ self.components_.T
 </pre>
 </div>
 </div>
@@ -10429,45 +10409,9 @@ ANREDE_KZ                       0.367914
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>avg distance = 46.8471
 Fitting KMeans with k=4... </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -10479,45 +10423,9 @@ Fitting KMeans with k=6... </pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>avg distance = 36.6910
 Fitting KMeans with k=8... </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -10529,45 +10437,9 @@ Fitting KMeans with k=10... </pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>avg distance = 32.4995
 Fitting KMeans with k=12... </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -10579,45 +10451,9 @@ Fitting KMeans with k=14... </pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>avg distance = 30.4908
 Fitting KMeans with k=16... </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -10629,45 +10465,9 @@ Fitting KMeans with k=18... </pre>
 </div>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>avg distance = 28.4128
 Fitting KMeans with k=20... </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-</pre>
 </div>
 </div>
 <div class="jp-OutputArea-child">
@@ -10774,24 +10574,6 @@ Done!
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Selected number of clusters: 10
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: divide by zero encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: overflow encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/utils/extmath.py:227: RuntimeWarning: invalid value encountered in matmul
-  ret = a @ b
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: divide by zero encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: overflow encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
-/opt/homebrew/Caskroom/miniconda/base/lib/python3.12/site-packages/sklearn/cluster/_kmeans.py:243: RuntimeWarning: invalid value encountered in matmul
-  current_pot = closest_dist_sq @ sample_weight
 </pre>
 </div>
 </div>
