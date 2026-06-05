@@ -7851,8 +7851,8 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Step-0:-Load-the-Data">Step 0: Load the Data<a class="anchor-link" href="#Step-0:-Load-the-Data">¶</a></h3><p>There are four files associated with this project (not including this one):</p>
 <ul>
-<li><code>Udacity_AZDIAS_Subset.csv</code>: Demographics data for the general population of Germany; 891211 persons (rows) x 85 features (columns).</li>
-<li><code>Udacity_CUSTOMERS_Subset.csv</code>: Demographics data for customers of a mail-order company; 191652 persons (rows) x 85 features (columns).</li>
+<li><code>AZDIAS_Subset.csv</code>: Demographics data for the general population of Germany; 891211 persons (rows) x 85 features (columns).</li>
+<li><code>CUSTOMERS_Subset.csv</code>: Demographics data for customers of a mail-order company; 191652 persons (rows) x 85 features (columns).</li>
 <li><code>Data_Dictionary.md</code>: Detailed information file about the features in the provided datasets.</li>
 <li><code>AZDIAS_Feature_Summary.csv</code>: Summary of feature attributes for demographics data; 85 features (rows) x 4 columns</li>
 </ul>
@@ -7871,7 +7871,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load in the general demographics data.</span>
-<span class="n">azdias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'Udacity_AZDIAS_Subset.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
+<span class="n">azdias</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'AZDIAS_Subset.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
 
 <span class="c1"># Load in the feature summary file.</span>
 <span class="n">feat_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'AZDIAS_Feature_Summary.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
@@ -10634,7 +10634,7 @@ Cluster assignment counts:
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load in the customer demographics data.</span>
-<span class="n">customers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'Udacity_CUSTOMERS_Subset.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
+<span class="n">customers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'CUSTOMERS_Subset.csv'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">';'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Customer data shape: </span><span class="si">{</span><span class="n">customers</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">customers</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
